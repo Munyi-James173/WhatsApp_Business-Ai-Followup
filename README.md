@@ -107,8 +107,8 @@ timing:
     after_meeting:      { days: 1, business_hours_only: false }
     default:            { days: 2, business_hours_only: true }
   business_hours:
-    start: "09:00"
-    end:   "17:30"
+    start: "08:00"
+    end:   "17:00"
     timezone: "Africa/Nairobi"   # change to your TZ
     working_days: [Mon, Tue, Wed, Thu, Fri]
 ```
