@@ -1,0 +1,33 @@
+{
+  "id": "test_002",
+  "description": "Active conversation — customer replied 3 hours ago. Must NOT trigger follow-up.",
+  "expected_needs_follow_up": false,
+  "expected_stage": "already_resolved",
+  "messages": [
+    {
+      "direction": "inbound",
+      "content": "Hello, do you have a demo I can try before buying?",
+      "sent_at": "2025-03-11T08:00:00Z"
+    },
+    {
+      "direction": "outbound",
+      "content": "Absolutely, James! I can set up a 30-minute live demo this week. What day works best for you?",
+      "sent_at": "2025-03-11T08:20:00Z"
+    },
+    {
+      "direction": "inbound",
+      "content": "Thursday afternoon would be perfect, maybe 3pm?",
+      "sent_at": "2025-03-12T06:30:00Z"
+    },
+    {
+      "direction": "outbound",
+      "content": "Thursday 3pm it is! I'll send a calendar invite shortly.",
+      "sent_at": "2025-03-12T07:00:00Z"
+    },
+    {
+      "direction": "inbound",
+      "content": "Got it, thanks. See you then!",
+      "sent_at": "2025-03-12T07:15:00Z"
+    }
+  ]
+}

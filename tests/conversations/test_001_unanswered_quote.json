@@ -1,0 +1,23 @@
+{
+  "id": "test_001",
+  "description": "Customer requested a quote 7 days ago and never replied",
+  "expected_needs_follow_up": true,
+  "expected_stage": "unanswered_quote",
+  "messages": [
+    {
+      "direction": "inbound",
+      "content": "Hi, I'm interested in your inventory management software. We have about 40 staff and three warehouses. Can you send me a quote?",
+      "sent_at": "2025-03-05T10:14:00Z"
+    },
+    {
+      "direction": "outbound",
+      "content": "Hi Sarah! Great to hear from you. I've put together a tailored quote for a 40-user licence across three sites — I'll email it over to you now. Let me know if you have any questions.",
+      "sent_at": "2025-03-05T10:52:00Z"
+    },
+    {
+      "direction": "outbound",
+      "content": "Just sent the quote to the email on file. It covers the Professional tier with multi-site support. Keen to walk you through it on a call if that helps.",
+      "sent_at": "2025-03-05T10:53:00Z"
+    }
+  ]
+}

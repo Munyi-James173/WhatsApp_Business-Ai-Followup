@@ -1,0 +1,23 @@
+{
+  "id": "test_003",
+  "description": "Customer explicitly opted out. System must suppress all future follow-ups.",
+  "expected_needs_follow_up": false,
+  "expected_stage": "opted_out",
+  "messages": [
+    {
+      "direction": "inbound",
+      "content": "Hi, I saw your ad. What does your software cost?",
+      "sent_at": "2025-03-01T09:00:00Z"
+    },
+    {
+      "direction": "outbound",
+      "content": "Hi! Our pricing starts at $299/month for up to 10 users. I can send the full breakdown if you like.",
+      "sent_at": "2025-03-01T09:10:00Z"
+    },
+    {
+      "direction": "inbound",
+      "content": "That's way out of budget for us. No thanks, please don't contact me again.",
+      "sent_at": "2025-03-01T09:22:00Z"
+    }
+  ]
+}

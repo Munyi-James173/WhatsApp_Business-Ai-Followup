@@ -1,0 +1,107 @@
+# ============================================================
+#  WhatsApp AI Follow-Up System — Configuration
+#  Copy this file to settings.yaml and fill in your values.
+# ============================================================
+
+# ── Local LLM ────────────────────────────────────────────────
+llm:
+  provider: ollama               # ollama | llamacpp
+  model: mistral:7b-instruct     # any Ollama model tag
+  base_url: http://localhost:11434
+  temperature: 0.7
+  max_tokens: 512
+  # Minimum confidence (0.0–1.0) for the analyser to green-light a follow-up.
+  # Raise this if you get too many false positives.
+  confidence_threshold: 0.72
+
+  # llamacpp settings (ignored when provider = ollama)
+  llamacpp_server_url: http://localhost:8080
+
+# ── Timing Rules ─────────────────────────────────────────────
+timing:
+  rules:
+    # Key = conversation stage label returned by the analyser
+    unanswered_quote:
+      days: 6
+      business_hours_only: true
+    brochure_sent:
+      days: 1
+      business_hours_only: true
+    general_inquiry:
+      days: 3
+      business_hours_only: true
+    after_meeting_or_demo:
+      days: 1
+      business_hours_only: false
+    pricing_requested:
+      days: 2
+      business_hours_only: true
+    cold_lead:
+      days: 7
+      business_hours_only: true
+    default:
+      days: 2
+      business_hours_only: true
+
+  business_hours:
+    start: "09:00"
+    end: "17:30"
+    timezone: "Africa/Nairobi"   # pytz-compatible timezone string
+    working_days:
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+
+# ── WhatsApp API ──────────────────────────────────────────────
+whatsapp:
+  provider: cloud_api            # cloud_api | twilio
+
+  # Meta WhatsApp Cloud API credentials
+  phone_number_id: "REPLACE_WITH_YOUR_PHONE_NUMBER_ID"
+  access_token: "REPLACE_WITH_YOUR_PERMANENT_ACCESS_TOKEN"
+  verify_token: "REPLACE_WITH_YOUR_CHOSEN_VERIFY_TOKEN"
+  api_version: "v19.0"
+
+  # Twilio credentials (leave blank if using cloud_api)
+  twilio_account_sid: ""
+  twilio_auth_token: ""
+  twilio_from_number: "whatsapp:+14155238886"
+
+# ── Opt-out & Suppression ─────────────────────────────────────
+opt_out:
+  # If the customer sends any of these (case-insensitive), suppress forever
+  keywords:
+    - "stop"
+    - "unsubscribe"
+    - "no thanks"
+    - "not interested"
+    - "please remove"
+    - "opt out"
+  # Don't follow up on threads older than this many days
+  suppress_after_days: 30
+  # Hard cap on automated messages per thread
+  max_follow_ups_per_thread: 3
+
+# ── Server ────────────────────────────────────────────────────
+server:
+  host: "0.0.0.0"
+  port: 8000
+  # Path where Meta / Twilio will POST incoming messages
+  webhook_path: "/webhook"
+
+# ── Logging ──────────────────────────────────────────────────
+logging:
+  audit_file: "logs/audit.jsonl"
+  level: INFO                    # DEBUG | INFO | WARNING | ERROR
+
+# ── Agent identity ───────────────────────────────────────────
+agent:
+  # Used in prompts so the LLM knows whose voice to write in
+  business_name: "Acme Sales"
+  agent_name: "Alex"             # Name that signs off messages
+  # Brief description of what your business does (helps the LLM stay on-topic)
+  business_context: >
+    We sell B2B software solutions for inventory management.
+    Our customers are SME owners and procurement managers.

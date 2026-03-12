@@ -1,0 +1,18 @@
+{
+  "id": "test_008",
+  "description": "We just sent a message 1 hour ago. Must NOT schedule another follow-up.",
+  "expected_needs_follow_up": false,
+  "expected_stage": "already_resolved",
+  "messages": [
+    {
+      "direction": "inbound",
+      "content": "Can I get more details on the enterprise plan?",
+      "sent_at": "2025-03-12T07:00:00Z"
+    },
+    {
+      "direction": "outbound",
+      "content": "Hi! The enterprise plan includes unlimited users, dedicated support, and custom integrations. I'll send the full spec sheet now.",
+      "sent_at": "2025-03-12T08:30:00Z"
+    }
+  ]
+}

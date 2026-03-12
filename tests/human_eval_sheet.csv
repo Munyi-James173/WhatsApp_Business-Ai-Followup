@@ -1,0 +1,5 @@
+case_id,description,stage,drafted_message,reviewer_1_human_sounding,reviewer_2_human_sounding,reviewer_3_human_sounding,notes
+test_001,Customer requested a quote 7 days ago and never replied,unanswered_quote,[generated at eval time — run python -m tests.eval --suite drafting],,,,
+test_004,We sent product brochure 2 days ago customer has gone quiet,brochure_sent,[generated at eval time],,,,
+test_006,Customer showed initial interest went cold after 8 days of silence,cold_lead,[generated at eval time],,,,
+test_007,Demo happened 2 days ago customer said they'd get back to us,after_meeting_or_demo,[generated at eval time],,,,

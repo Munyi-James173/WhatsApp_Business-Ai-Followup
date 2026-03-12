@@ -1,0 +1,33 @@
+{
+  "id": "test_005",
+  "description": "Sale closed and onboarding confirmed. No follow-up needed.",
+  "expected_needs_follow_up": false,
+  "expected_stage": "already_resolved",
+  "messages": [
+    {
+      "direction": "inbound",
+      "content": "We've decided to go ahead! How do we get started?",
+      "sent_at": "2025-03-08T10:00:00Z"
+    },
+    {
+      "direction": "outbound",
+      "content": "Fantastic news, Lisa! I'll send the contract and onboarding guide to your email right now.",
+      "sent_at": "2025-03-08T10:15:00Z"
+    },
+    {
+      "direction": "inbound",
+      "content": "Got both, thanks! We'll review and sign today.",
+      "sent_at": "2025-03-08T11:00:00Z"
+    },
+    {
+      "direction": "outbound",
+      "content": "Perfect. Once signed, our onboarding team will reach out within 24 hours to set up your account. Welcome aboard!",
+      "sent_at": "2025-03-08T11:10:00Z"
+    },
+    {
+      "direction": "inbound",
+      "content": "Contract signed and sent back. Excited to get started!",
+      "sent_at": "2025-03-08T14:00:00Z"
+    }
+  ]
+}

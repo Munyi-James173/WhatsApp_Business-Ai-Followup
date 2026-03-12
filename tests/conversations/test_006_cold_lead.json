@@ -1,0 +1,18 @@
+{
+  "id": "test_006",
+  "description": "Customer showed initial interest, went cold after 8 days of silence.",
+  "expected_needs_follow_up": true,
+  "expected_stage": "cold_lead",
+  "messages": [
+    {
+      "direction": "inbound",
+      "content": "Hi! Someone recommended your inventory tool. We're a growing retailer, might be worth exploring.",
+      "sent_at": "2025-03-03T09:30:00Z"
+    },
+    {
+      "direction": "outbound",
+      "content": "Hi Mike, great to hear from you! We work with lots of growing retailers. What's your current setup and main pain point?",
+      "sent_at": "2025-03-03T09:45:00Z"
+    }
+  ]
+}

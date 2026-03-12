@@ -1,0 +1,18 @@
+{
+  "id": "test_007",
+  "description": "Demo happened 2 days ago; customer said they'd get back to us. Should follow up.",
+  "expected_needs_follow_up": true,
+  "expected_stage": "after_meeting_or_demo",
+  "messages": [
+    {
+      "direction": "inbound",
+      "content": "The demo was really good. I need to check with my co-founder and we'll get back to you.",
+      "sent_at": "2025-03-10T16:00:00Z"
+    },
+    {
+      "direction": "outbound",
+      "content": "Glad you enjoyed it! No rush at all — just let me know if you have any questions in the meantime.",
+      "sent_at": "2025-03-10T16:05:00Z"
+    }
+  ]
+}
